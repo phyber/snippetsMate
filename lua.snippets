@@ -1,3 +1,5 @@
+# Lua snippets for snipMate
+
 snippet #!
 	#!/usr/bin/env lua
 
@@ -9,42 +11,66 @@ snippet lo
 	local ${1:var} = ${2:val}
 
 # Conditionals
+# if .. then .. end
 snippet if
 	if ${1:condition} then
 		${2:--[[ code ]]}
 	end
 
+# if .. then .. else .. end
+snippet ife
+	if ${1:condition} then
+		${2:--[[ code ]]}
+	else
+		${3:--[[ code ]]}
+	end
+
+# if .. then .. elseif .. else .. end
+snippet ifee
+	if ${1:condition} then
+		${2:--[[ code ]]}
+	elseif ${3:condition} then
+		${4:--[[ code ]]}
+	else
+		${5:--[[ code ]]}
+	end
 # Some lazy evals, not finished
 snippet t
 	${1:a} and ${2:b} or ${3:c}
 
 # Functions
+# Global function
 snippet fun
 	function ${1:function_name}(${2:args})
 		${3:--[[ code ]]}
 	end
 
-snippet lofun
+# Local function
+snippet lfun
 	local function ${1:function_name}(${2:args})
 		${3:--[[ code ]]}
 	end
 
 # Loops
-snippet for
+# Generic for
+snippet gfor
 	for ${1:vars} in ${2:iterator} do
 		${3:--[[ code ]]}
 	end
 
+# Numeric for
 snippet nfor
 	for ${1:i} = ${2:10} do
 		${3:--[[ code ]]}
 	end
 
+# While
 snippet wh
 	while ${1:condition} do
 		${2:--[[ code ]]}
 	end
 
+# Repeat
 snippet rep
 	repeat
 		${1:--[[ code ]]}
@@ -57,27 +83,34 @@ snippet do
 	end
 
 # Tables
+# setmetatable
 snippet smt
 	setmetatable(${1:tbl}, ${2:...})
 
+# getmetatable
 snippet gmt
 	getmetatable(${1:tbl})
 
 # Snortcuts
+# assert
 snippet ass
 	assert(${1:test} == ${2:condition}, "${3:errmsg}")
 
+# Block comment
 snippet --
 	--[[
 		${1:comment}
 	]]
 
+# tonumber
 snippet tn
 	tonumber(${1:var})${2}
 
+# tostring
 snippet ts
 	tostring(${1:var})${2}
 
+# print
 snippet pr
 	print(${1:--[[ things ]]})
 
