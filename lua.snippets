@@ -99,8 +99,8 @@ snippet tsort
 
 # Table sort with custom function
 snippet tsortf
-	table.sort(${1:tbl}, function(a, b)
-		${2:--[[ code ]]}
+	table.sort(${1:tbl}, function(${2:a}, ${3:b})
+		${4:--[[ code ]]}
 	end)
 
 # Table insert
