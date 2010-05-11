@@ -1,0 +1,83 @@
+snippet #!
+	#!/usr/bin/env lua
+
+snippet req
+	require "${1:module}"
+
+# Variables
+snippet lo
+	local ${1:var} = ${2:val}
+
+# Conditionals
+snippet if
+	if ${1:condition} then
+		${2:--[[ code ]]}
+	end
+
+# Some lazy evals, not finished
+snippet t
+	${1:a} and ${2:b} or ${3:c}
+
+# Functions
+snippet fun
+	function ${1:function_name}(${2:args})
+		${3:--[[ code ]]}
+	end
+
+snippet lofun
+	local function ${1:function_name}(${2:args})
+		${3:--[[ code ]]}
+	end
+
+# Loops
+snippet for
+	for ${1:vars} in ${2:iterator} do
+		${3:--[[ code ]]}
+	end
+
+snippet nfor
+	for ${1:i} = ${2:10} do
+		${3:--[[ code ]]}
+	end
+
+snippet wh
+	while ${1:condition} do
+		${2:--[[ code ]]}
+	end
+
+snippet rep
+	repeat
+		${1:--[[ code ]]}
+	until ${2:condition}
+
+# Do..
+snippet do
+	do
+		${1:--[[ code ]]}
+	end
+
+# Tables
+snippet smt
+	setmetatable(${1:tbl}, ${2:...})
+
+snippet gmt
+	getmetatable(${1:tbl})
+
+# Snortcuts
+snippet ass
+	assert(${1:test} == ${2:condition}, "${3:errmsg}")
+
+snippet --
+	--[[
+		${1:comment}
+	]]
+
+snippet tn
+	tonumber(${1:var})${2}
+
+snippet ts
+	tostring(${1:var})${2}
+
+snippet pr
+	print(${1:--[[ things ]]})
+
